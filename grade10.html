@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grade 10 Quizzes</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f7f9fc;
+      color: #333;
+      text-align: center;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    body.dark-mode {
+      background: #121212;
+      color: #eee;
+    }
+
+    header {
+      background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+      color: white;
+      padding: 20px 0;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    .intro {
+      margin: 40px 0;
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      color: #555;
+    }
+
+    .quiz-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .quiz-card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      width: 250px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .dark-mode .quiz-card {
+      background: #1e1e1e;
+      color: #ccc;
+    }
+
+    .quiz-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .quiz-card h3 {
+      margin: 10px 0;
+      font-size: 1.5rem;
+    }
+
+    .quiz-card p {
+      font-size: 1rem;
+      margin: 10px 0;
+      color: #777;
+    }
+
+    .dark-mode .quiz-card p {
+      color: #bbb;
+    }
+
+    .quiz-card a {
+      display: inline-block;
+      background: #28a745;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .quiz-card a:hover {
+      background: #218838;
+    }
+
+    .cta-button {
+      margin-top: 40px;
+      background: #007bff;
+      color: white;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      text-decoration: none;
+      border-radius: 8px;
+      display: inline-block;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background: #0056b3;
+    }
+
+    footer {
+      background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+      color: white;
+      padding: 10px 0;
+      margin-top: 40px;
+    }
+
+    /* Fade-In Animation */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Top-right corner controls */
+    .top-controls {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 10px;
+    }
+
+    .language-switch button,
+    .theme-toggle,
+    .join-world {
+      padding: 8px 16px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      border-radius: 5px;
+      border: none;
+      transition: background 0.3s ease;
+    }
+
+    .language-switch button:first-child {
+      background: #007bff;
+      color: white;
+    }
+
+    .language-switch button:last-child {
+      background: #ffc107;
+      color: black;
+    }
+
+    .theme-toggle {
+      background: #343a40;
+      color: white;
+    }
+
+    .join-world {
+      background: linear-gradient(135deg, #ff416c, #ff4b2b);
+      color: white;
+      font-weight: bold;
+    }
+
+    .join-world:hover {
+      background: linear-gradient(135deg, #ff4b2b, #ff416c);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top-right corner buttons -->
+  <div class="top-controls">
+    <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
+    <div class="language-switch">
+      <button onclick="switchLanguage('en')">English</button>
+      <button onclick="switchLanguage('si')">සිංහල</button>
+    </div>
+      </div>
+
+  <!-- Header Section -->
+  <header>
+    <h1 class="fade-in">Grade 10 Quizzes 🧠</h1>
+  </header>
+
+  <!-- Introduction Section -->
+  <section class="intro fade-in">
+    <p>Welcome to the Grade 10 quiz page! Choose from the following subjects to test your knowledge.</p>
+  </section>
+
+  <!-- Available Quizzes Section -->
+  <section class="fade-in">
+    <h2>Featured Quizzes</h2>
+    <div class="quiz-list">
+      <!-- Sinhala Quiz Card -->
+      <div class="quiz-card">
+        <h3 class="quiz-title">Sinhala Quiz</h3>
+        <p>Test your knowledge in the Sinhala language!</p>
+        <a href="https://forms.gle/sinhala_quiz_link" target="_blank">Join Quiz</a>
+      </div>
+
+      <!-- English Quiz Card -->
+      <div class="quiz-card">
+        <h3 class="quiz-title">English Quiz</h3>
+        <p>Test your knowledge in the English language!</p>
+        <a href="https://forms.gle/english_quiz_link" target="_blank">Join Quiz</a>
+      </div>
+
+      <!-- ICT Quiz Card -->
+      <div class="quiz-card">
+        <h3 class="quiz-title">ICT Quiz</h3>
+        <p>Test your knowledge in Information and Communication Technology (ICT).</p>
+        <a href="https://forms.gle/ict_quiz_link" target="_blank">Join Quiz</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action Section -->
+  <section>
+    <a href="https://forms.gle/xyz123" class="cta-button" target="_blank">Join More Quizzes</a>
+  </section>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; 2025 Grade 10 Quizzes | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    // Fade-In Effect
+    document.addEventListener('DOMContentLoaded', () => {
+      const fadeElements = document.querySelectorAll('.fade-in');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1 });
+      fadeElements.forEach(el => observer.observe(el));
+    });
+
+    // Language Switch
+    const content = {
+      en: {
+        header: 'Grade 10 Quizzes 🧠',
+        intro: 'Welcome to the Grade 10 quiz page! Choose from the following subjects to test your knowledge.',
+        quiz1: 'Sinhala Quiz',
+        quiz2: 'English Quiz',
+        quiz3: 'ICT Quiz'
+      },
+      si: {
+        header: 'පන්තිය 10 පරීක්ෂණ🧠',
+        intro: 'පන්තිය 10 පරීක්ෂණ පිටුවට පිළිගනිමු! ඔබේ දැනුම පරීක්ෂා කිරීමට පහත මාතෘකා එකක් තෝරන්න.',
+        quiz1: 'සිංහල පරීක්ෂණය',
+        quiz2: 'ඉංග්‍රීසි පරීක්ෂණය',
+        quiz3: 'ICT පරීක්ෂණය'
+      }
+    };
+
+    function switchLanguage(lang) {
+      document.querySelector('h1').textContent = content[lang].header;
+      document.querySelector('.intro p').textContent = content[lang].intro;
+      document.querySelectorAll('.quiz-title')[0].textContent = content[lang].quiz1;
+      document.querySelectorAll('.quiz-title')[1].textContent = content[lang].quiz2;
+      document.querySelectorAll('.quiz-title')[2].textContent = content[lang].quiz3;
+    }
+
+    // Theme Toggle
+    function toggleTheme() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
+
+</body>
+</html>
+
